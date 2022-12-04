@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import configuration.ode as ode
+import os
 
 class System:
 
@@ -55,7 +56,7 @@ class System:
 
     def save_timeseries(self):
         if self.timeseries is not None:
-            self.timeseries.to_csv('output/timeseries.csv', index=False)
+            self.timeseries.to_csv('timeseries.csv', index=False)
 
 if __name__=='__main__':
     S = System()
