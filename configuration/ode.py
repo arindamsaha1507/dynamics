@@ -1,13 +1,13 @@
 import numpy as np
 
-def ode(x, t, p):
+def ode(x, t, p, type):
 
+    if type == 'fhn':
+        return fhn(x, p)
+
+def fhn(x, p):
+    
     assert len(x) == 2
-
-    # return np.array([
-    #     x[1],
-    #     -x[0]
-    # ])
 
     return np.array([
         x[0] - (x[0]**3)/3.0 - x[1] + 0.5,
