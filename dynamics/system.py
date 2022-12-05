@@ -54,9 +54,9 @@ class System:
 
         self.timeseries = df
 
-    def save_timeseries(self):
+    def save_timeseries(self, outfile):
         if self.timeseries is not None:
 
             ts = self.timeseries[int(self.time['tr']*len(self.timeseries)):]
 
-            ts.to_csv('timeseries.csv', index=False)
+            ts.to_csv(outfile, index=False)
