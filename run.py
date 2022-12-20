@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from dynamics.system import System
 
 import argparse
