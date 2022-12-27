@@ -13,9 +13,9 @@ It is designed to be used in combination with the FabDynamics plugin of FabSim.
 Please refer to the documentation of FabDynamics for detailed instructions on the usage with FabSim.
 
 We aim to give support for the following tools in the future:
-1. Basins of Attraction
-2. Lyapunov exponents and spectrum
-3. Stable and unstable manifolds
+#. Basins of Attraction
+#. Lyapunov exponents and spectrum
+#. Stable and unstable manifolds
 
 .. toctree::
    :maxdepth: 2
