@@ -6,6 +6,7 @@
 # Welcome to Dynamics's documentation!
 
 ```{include} ../README.md
+```
 
 ```{toctree}
 :caption: 'Contents:'
