@@ -28,6 +28,7 @@ Table of Contents
 
    Installation
    Usage
+   Configuration
 
 .. Indices and tables
 .. ==================

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dynamics: A tool for analysis of dynamical systems &mdash; Dynamics 0.1 documentation</title>
+  <title>Usage &mdash; Dynamics 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="Installation.html" /> 
+    <link rel="next" title="Configuration" href="Configuration.html" />
+    <link rel="prev" title="Installation" href="Installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -28,7 +29,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> Dynamics
+            <a href="index.html" class="icon icon-home"> Dynamics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -39,9 +40,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
 </ul>
 
@@ -51,17 +52,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Dynamics</a>
+          <a href="index.html">Dynamics</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Dynamics: A tool for analysis of dynamical systems</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Usage</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Usage.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -69,35 +70,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dynamics-a-tool-for-analysis-of-dynamical-systems">
-<h1>Dynamics: A tool for analysis of dynamical systems<a class="headerlink" href="#dynamics-a-tool-for-analysis-of-dynamical-systems" title="Permalink to this heading"></a></h1>
-<p>Currently dynamics simply solves a system of ODE’s.</p>
-<p>It is designed to be used in combination with the FabDynamics plugin of FabSim.</p>
-<p>Please refer to the documentation of FabDynamics for detailed instructions on the usage with FabSim.</p>
-<p>We aim to give support for the following tools in the future:</p>
-<ul class="simple">
-<li><p>Basins of Attraction</p></li>
-<li><p>Lyapunov exponents and spectrum</p></li>
-<li><p>Stable and unstable manifolds</p></li>
-</ul>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
+<p>Although Dynamics is written to be run using the FabSim plugin FabDynamics, it can also be run as a standalone program to simulate dynamical systems. Currently we can use it to simulate any system of ODE’s using RK4 numerical solver. For a basic run, from the dynamics directory, simply execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">run</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
 </div>
-</section>
+<p>This would create a file called <code class="docutils literal notranslate"><span class="pre">timeseries.csv</span></code> with the timeseries excluding the transience. To plot the timeseries, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">plotter</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>To configure the exact system of ODE to use, please see the Configuration page.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We understand that these are fairly basic functionalities and visualisations. We intend to provide more advanced post-processing and visualisations in the FabDynamics module. For the Dynamics module, we intend to focus on simulating more types of systems in future such as maps, DDE’s, SDE’s, PDE’s and networks.</p>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

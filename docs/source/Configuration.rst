@@ -1,0 +1,24 @@
+Configuration
+=============
+
+An example of the configuration file ``inputs.yml`` is as follows:
+
+.. code-block:: yaml
+
+    ode_system: 'fhn'
+
+    parameters:
+        a: -0.7
+        b: 0.8
+        c: 12.5
+
+    initial_conditions:
+        x: 0.1
+        y: 0.1
+
+    time:
+        ti: 0.0
+        tf: 1000.0
+        dt: 0.01
+        tr: 0.8
+
