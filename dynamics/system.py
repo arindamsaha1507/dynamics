@@ -19,7 +19,10 @@ class System:
         self.ic = [self.ic[k] for k in self.vars]
         self.timeseries = None
 
-        self.system = ode_system
+        if ode_system == 'None':
+            self.system = inputs['ode_system']
+        else:
+            self.system = ode_system
 
 
     def solver(self):

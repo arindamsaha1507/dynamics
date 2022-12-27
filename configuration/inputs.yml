@@ -1,3 +1,4 @@
+ode_system: 'fhn'
 parameters:
   a: 0.7
   b: 0.8
