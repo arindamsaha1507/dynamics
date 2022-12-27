@@ -18,17 +18,17 @@ We aim to give support for the following tools in the future:
 * Lyapunov exponents and spectrum
 * Stable and unstable manifolds
 
-Arindam
+Table of Contents
+-----------------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    Installation
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
