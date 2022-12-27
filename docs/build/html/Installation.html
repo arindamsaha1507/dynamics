@@ -36,23 +36,45 @@
             
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<p>Installing Dynamics is easy. All you require is a linux based machine with Python3 installed on it.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>An important and <strong>very</strong> useful tool for installing python based packages is pip. You would require pip3 (pip for python3) for installing Dynamics too. Install pip3 if you don’t have it already:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
+</pre></div>
+</div>
+</div>
 <ol class="arabic">
-<li><p>Clone the repository:</p>
+<li><p>Firstly, clone the repository:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arindamsaha1507</span><span class="o">/</span><span class="n">dynamics</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
-<li><p>Install all required packages:</p>
+<li><p>A new directory called <strong>dynamics</strong> would have been created in your present working directory. Change into that directory with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">dynamics</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install all required packages for dynamics:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </li>
-<li><p>Run the code:</p>
+<li><p>Test that the installation is successful using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">run</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once Dynamics is installed using git, it is very easy to update it to the latest version by running the following command from within the <strong>dynamics</strong> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<p>It is a good practice to update Dynamics every few days to keep up with the latest changes in the code.</p>
+</div>
 </section>
 
 
@@ -72,7 +94,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
 </ul>
