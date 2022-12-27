@@ -2,10 +2,6 @@
 requires = ["flit_core >=3.4,<4"]
 build-backend = "flit_core.buildapi"
 
-[project]
-name = "Dynamics"
-authors = [{name = "Arindam Saha", email = "arindamsaha1507@gmail.com"}]
-dynamic = ["version", "description"]
 
 [project.optional-dependencies]
 doc = [
