@@ -5,6 +5,8 @@
 
 # Welcome to Dynamics's documentation!
 
+Arindam Saha
+
 ```{include} ../README.md
 :relative-images
 ```
