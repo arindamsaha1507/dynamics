@@ -8,7 +8,7 @@
 Arindam Saha
 
 ```{include} ../README.md
-:relative-images
+:relative-images:
 ```
 
 ```{toctree}
