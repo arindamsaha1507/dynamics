@@ -25,6 +25,7 @@ Table of Contents
    :maxdepth: 2
 
    Installation
+   Usage
 
 .. Indices and tables
 .. ==================
