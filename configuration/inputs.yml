@@ -1,6 +1,6 @@
 ode_system: 'fhn'
 parameters:
-  a: 0.7
+  a: -0.7
   b: 0.8
   c: 12.5
 initial_conditions:
@@ -9,6 +9,6 @@ initial_conditions:
 time:
   ti: 0.0
   tf: 1000.0
-  dt: 0.1
+  dt: 0.01
   tr: 0.8
 
