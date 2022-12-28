@@ -42,7 +42,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-inputs-yml-file">The inputs.yml file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-family-key">The family key</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-ode-family">The ode family</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -71,8 +80,13 @@
              
   <section id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
+<p>Configuration refers to the settings that determine the specifics of the simulation. For dynamics, these settings are given in the <code class="docutils literal notranslate"><span class="pre">inputs.yml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> directory.</p>
+<section id="the-inputs-yml-file">
+<h2>The inputs.yml file<a class="headerlink" href="#the-inputs-yml-file" title="Permalink to this heading"></a></h2>
 <p>An example of the configuration file <code class="docutils literal notranslate"><span class="pre">inputs.yml</span></code> is as follows:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ode_system</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;fhn&#39;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ode&#39;</span><span class="w"></span>
+
+<span class="nt">ode_system</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;fhn&#39;</span><span class="w"></span>
 
 <span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.7</span><span class="w"></span>
@@ -90,6 +104,31 @@
 <span class="w">    </span><span class="nt">tr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w"></span>
 </pre></div>
 </div>
+<p>We now discuss each of the entry in the file.</p>
+<section id="the-family-key">
+<h3>The family key<a class="headerlink" href="#the-family-key" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">family</span></code> key determines which class of system (maps, ode’s, etc.) is being solved. Therefore, each <code class="docutils literal notranslate"><span class="pre">inputs.yml</span></code> file <em>must</em> have a <code class="docutils literal notranslate"><span class="pre">family</span></code> key. As of now, the only valid value for it is <code class="docutils literal notranslate"><span class="pre">ode</span></code>. In future, we plan to add other types of families for maps, networks and other types of differential equations.</p>
+<p>Depending on the value of the <code class="docutils literal notranslate"><span class="pre">family</span></code> key, the other contents of the <code class="docutils literal notranslate"><span class="pre">input.yml</span></code> file are determined.</p>
+<section id="the-ode-family">
+<h4>The ode family<a class="headerlink" href="#the-ode-family" title="Permalink to this heading"></a></h4>
+<p>If the <code class="docutils literal notranslate"><span class="pre">family</span></code> is <code class="docutils literal notranslate"><span class="pre">ode</span></code>, then the <code class="docutils literal notranslate"><span class="pre">inputs.yml</span></code> file <em>must</em> contain the following keys.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ode_system</span></code>: It determines the set of differential equations being used. The value should be a user-defined name which has a corresponding entry in the <code class="docutils literal notranslate"><span class="pre">ode.py</span></code> file (discussed later in the document).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameters</span></code>: This defines the parameters used in the system of ODE’s. The value is a list of key/value pairs with the key being the variable associated with the parameter and value being its default value to be used in the system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">initial_conditions</span></code>: This defines dynamical variables as well as their initial values in the system of ODE’s. Similar to the parameters, the value of this key is a list of key/value pairs with the key being the dynamical variable and value being its initial value to be used in the system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code>: This contains time related configurations. It contains a list of key/value pairs:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ti</span></code>: initial time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tf</span></code>: final time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dt</span></code>: time-step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tr</span></code>: transience. This is the fraction of time-period that will be considered transience and will not be written in the timeseries.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
 </section>
 
 
