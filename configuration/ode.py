@@ -1,13 +1,13 @@
 import numpy as np
 
-def ode(x, t, p, type):
+def ode(t, x, p, type):
 
     if type == 'fhn':
         return fhn(x, p)
     elif type == 'resource':
         return resource(x, p)
 
-def jacobian(x, t, p, type):
+def jacobian(t, x, p, type):
 
     if type == 'fhn':
         return jac_fhn(x, p)

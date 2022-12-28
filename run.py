@@ -18,5 +18,6 @@ if __name__=='__main__':
 
     S = System(args)
     S.solver()
+    S.eigenvalues()
     S.save_timeseries(args.outfile)
     S.save_eigenvalues(args.evfile)

@@ -51,7 +51,7 @@ An example of the configuration file ``inputs.yml`` is as follows:
 We now discuss each of the entry in the file.
 
 The family key
-------------------
+--------------
 
 The ``family`` key determines which class of system (maps, ode's, etc.) is being solved. Therefore, each ``inputs.yml`` file *must* have a ``family`` key. As of now, the only valid value for it is ``ode``. In future, we plan to add other types of families for maps, networks and other types of differential equations.
 
