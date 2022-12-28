@@ -7,13 +7,13 @@ from numpy import linalg as LA
 
 class System:
 
-    def __init__(self, ode_system):
+    def __init__(self, arguments):
 
         with open('configuration/inputs.yml', 'r') as f:
             inputs = yaml.safe_load(f)
 
-        self.params = inputs['parameters']
-        self.ic = inputs['initial_conditions']
+        self.params = dict(inputs['parameters'])
+        self.ic = dict(inputs['initial_conditions'])
         self.time = inputs['time']
 
         for key in self.params:
@@ -22,14 +22,22 @@ class System:
         for key in self.ic:
             self.ic[key] = self.ic[key]['default']
 
+        if arguments.random_ic != 'None':
+            vars = arguments.random_ic.split(';')
+            for v in vars:
+                self.ic[v] = np.random.random()*(inputs['initial_conditions'][v]['max'] - inputs['initial_conditions'][v]['min']) + inputs['initial_conditions'][v]['min']
+
+        if arguments.random_params != 'None':
+            vars = arguments.random_params.split(';')
+            for v in vars:
+                self.params[v] = np.random.random()*(inputs['parameters'][v]['max'] - inputs['parameters'][v]['min']) + inputs['parameters'][v]['min']
+
+
         self.vars = list(self.ic.keys())
         self.ic = [self.ic[k] for k in self.vars]
         self.timeseries = None
 
-        if ode_system == 'None':
-            self.system = inputs['ode_system']
-        else:
-            self.system = ode_system
+        self.system = inputs['ode_system']
 
 
     def solver(self):
