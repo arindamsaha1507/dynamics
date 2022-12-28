@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 def ode(t, x, p, type):
 
@@ -6,11 +7,17 @@ def ode(t, x, p, type):
         return fhn(x, p)
     elif type == 'resource':
         return resource(x, p)
+    else:
+        sys.exit("Unknown name of system of ODE's")
 
 def jacobian(t, x, p, type):
 
     if type == 'fhn':
         return jac_fhn(x, p)
+    elif type == 'resource':
+        return jac_resource(x, p)
+    else:
+        sys.exit("Unknown name of system of ODE's")
 
 # ODE Systems
 
@@ -48,7 +55,7 @@ def jac_fhn(x, p):
         ]
     ])
 
-def resource_fhn(x, p):
+def jac_resource(x, p):
 
     assert len(x) == 1
 
