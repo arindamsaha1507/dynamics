@@ -1,7 +1,11 @@
 Configuration
 =============
 
-Configuration refers to the settings that determine the specifics of the simulation. For dynamics, these settings are given in the ``inputs.yml`` file in the ``configuration`` directory.
+Configuration refers to the settings that determine the specifics of the simulation. For dynamics, these settings are given via
+
+* The ``inputs.yml`` file in the ``configuration`` directory.
+* The ``ode.py`` file in the ``configuration`` directory.
+* The command-line arguments given when running ``run.py``.
 
 The inputs.yml file
 +++++++++++++++++++++++
@@ -15,13 +19,28 @@ An example of the configuration file ``inputs.yml`` is as follows:
     ode_system: 'fhn'
 
     parameters:
-        a: -0.7
-        b: 0.8
-        c: 12.5
+        a: 
+            min: -1.0
+            max: 1.0
+            default: 0.7
+        b: 
+            min: 0.0
+            max: 1.0
+            default: 0.8
+        c:
+            min: 0.0
+            max: 20.0
+            default: 12.5
 
     initial_conditions:
-        x: 0.1
-        y: 0.1
+        x: 
+            min: -5.0
+            max: 5.0
+            default: 0.1
+        y:
+            min: -5.0
+            max: 5.0
+            default: 0.1
 
     time:
         ti: 0.0
@@ -45,13 +64,8 @@ If the ``family`` is ``ode``, then the ``inputs.yml`` file *must* contain the fo
 
 #. ``ode_system``: It determines the set of differential equations being used. The value should be a user-defined name which has a corresponding entry in the ``ode.py`` file (discussed later in the document).
 
-#. ``parameters``: This defines the parameters used in the system of ODE's. The value is a list of key/value pairs with the key being the variable associated with the parameter and value being its default value to be used in the system.
+#. ``parameters``: This defines the parameters used in the system of ODE's. It lists the variables associated with the parameters and also declares the minimum, maximum and default values for each variable.
 
-#. ``initial_conditions``: This defines dynamical variables as well as their initial values in the system of ODE's. Similar to the parameters, the value of this key is a list of key/value pairs with the key being the dynamical variable and value being its initial value to be used in the system.
+#. ``initial_conditions``: This defines dynamical variables as well as their initial values in the system of ODE's. Similar to the parameters, the minimum, maximum and the default values of the dynamical variables are declared.
 
-#. ``time``: This contains time related configurations. It contains a list of key/value pairs:
-
-  * ``ti``: initial time.
-  * ``tf``: final time.
-  * ``dt``: time-step.
-  * ``tr``: transience. This is the fraction of time-period that will be considered transience and will not be written in the timeseries.
+#. ``time``: This contains time related configurations. It contains: ``ti`` and ``tf`` which give initial time of simulation. The time-step of the simulation is given by ``dt``; and the transience is given by ``tr``. Note that ``tr`` gives the fraction of time-period ``tf-ti`` that will be considered transience and will not be written in the timeseries.
