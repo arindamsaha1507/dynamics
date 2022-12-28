@@ -16,6 +16,12 @@ class System:
         self.ic = inputs['initial_conditions']
         self.time = inputs['time']
 
+        for key in self.params:
+            self.params[key] = self.params[key]['default']
+
+        for key in self.ic:
+            self.ic[key] = self.ic[key]['default']
+
         self.vars = list(self.ic.keys())
         self.ic = [self.ic[k] for k in self.vars]
         self.timeseries = None
