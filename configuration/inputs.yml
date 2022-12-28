@@ -1,3 +1,5 @@
+family: 'ode'
+
 ode_system: 'fhn'
 
 parameters:
