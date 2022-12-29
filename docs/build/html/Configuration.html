@@ -50,6 +50,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#the-ode-py-file">The ode.py file</a></li>
 </ul>
 </li>
 </ul>
@@ -88,40 +89,40 @@
 </ul>
 <section id="the-inputs-yml-file">
 <h2>The inputs.yml file<a class="headerlink" href="#the-inputs-yml-file" title="Permalink to this heading"></a></h2>
-<p>An example of the configuration file <code class="docutils literal notranslate"><span class="pre">inputs.yml</span></code> is as follows:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ode&#39;</span><span class="w"></span>
-
-<span class="nt">ode_system</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;fhn&#39;</span><span class="w"></span>
-
-<span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">a</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span><span class="w"></span>
-<span class="w">    </span><span class="nt">b</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w"></span>
-<span class="w">    </span><span class="nt">c</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12.5</span><span class="w"></span>
-
-<span class="nt">initial_conditions</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">x</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-5.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"></span>
-<span class="w">    </span><span class="nt">y</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-5.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span><span class="w"></span>
-<span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"></span>
-
-<span class="nt">time</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ti</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000.0</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w"></span>
+<p>The <code class="docutils literal notranslate"><span class="pre">inputs.yml</span></code> file determines general settings governing the simulation such as the parameters, initial conditions, timesteps and duration. An example of the file is as follows:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ode&#39;</span><span class="w"></span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nt">ode_system</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;fhn&#39;</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">  </span><span class="nt">c</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12.5</span><span class="w"></span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nt">initial_conditions</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">  </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span>
+<span class="linenos">21</span><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-5.0</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">  </span><span class="nt">y</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-5.0</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"></span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="nt">time</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">  </span><span class="nt">ti</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
+<span class="linenos">31</span><span class="w">  </span><span class="nt">tf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000.0</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">  </span><span class="nt">dt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
+<span class="linenos">33</span><span class="w">  </span><span class="nt">tr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We now discuss each of the entry in the file.</p>
@@ -140,6 +141,27 @@
 </ol>
 </section>
 </section>
+</section>
+<section id="the-ode-py-file">
+<h2>The ode.py file<a class="headerlink" href="#the-ode-py-file" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ode.py</span></code> file defines the exact system of ODE’s to be simulated. This can be divided file can be divided into three parts.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">ode</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;fhn&#39;</span><span class="p">:</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="n">fhn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;resource&#39;</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="n">resource</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">11</span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Unknown name of system of ODE&#39;s&quot;</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">jacobian</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;fhn&#39;</span><span class="p">:</span>
+</pre></div>
+</div>
 </section>
 </section>
 
