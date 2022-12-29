@@ -1,5 +1,5 @@
-Usage
-=====
+Running Basic Simulations
+=========================
 
 Although Dynamics is written to be run using the FabSim plugin FabDynamics, it can also be run as a standalone program to simulate dynamical systems. Currently we can use it to simulate any system of ODE's using RK4 numerical solver. For a basic run, from the dynamics directory, simply execute::
 

@@ -26,9 +26,9 @@ Table of Contents
    :caption: Contents:
 
 
-   Installation
-   Usage
-   Configuration
+   installation
+   basic_usage
+   configuration
 
 .. Indices and tables
 .. ==================
