@@ -1,11 +1,12 @@
-Configuration
-=============
+Overview of the Configuration Files
+===================================
 
-Configuration refers to the settings that determine the specifics of the simulation. For dynamics, these settings are given via
+Any simulation requires some prior settings to be defined. For dynamics, these settings are given in two files in the ``configuration`` directory. These files are:
 
-* The ``inputs.yml`` file in the ``configuration`` directory.
-* The ``ode.py`` file in the ``configuration`` directory.
-* The command-line arguments given when running ``run.py``.
+* The ``inputs.yml`` file
+* The ``ode.py`` file 
+
+While the ODE's of the dynamical system to be simulated are given in ``ode.py``, the general parameters of the simulation are given in ``inputs.yml``. We now look at each of these files in detail.
 
 The inputs.yml file
 +++++++++++++++++++++++
