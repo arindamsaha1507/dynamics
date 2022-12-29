@@ -43,9 +43,22 @@ The ode.py file
 
 The ``ode.py`` file defines the exact system of ODE's to be simulated. The file contains the following functions:
 
-.. literalinclude:: ../../configuration/ode.py
-    :language: python
-    :lines: -15
-    :lineno-match:
-    :linenos:
+#. The ``ode(t, x, p, type)`` function selects the system of ODE based on the ``type`` input and evaluates it for parameter set ``p`` at the dynamical variables defined by ``x``. The argument ``type`` take the same value as ``ode_system`` in the ``inputs.yml`` file.
 
+    .. literalinclude:: ../../configuration/ode.py
+        :language: python
+        :lines: 4-27
+        :lineno-match:
+        :linenos:
+
+#. Similarly, the ``jacobian(t, x, p, type)`` function selects the Jacobian of the system based on the ``type`` input and evaluates it for parameter set ``p`` at the dynamical variables defined by ``x``. The argument ``type`` take the same value as ``ode_system`` in the ``inputs.yml`` file.
+
+    .. literalinclude:: ../../configuration/ode.py
+        :language: python
+        :lines: 29-52
+
+#. Finally, the file contains the list of systems of ODE's as functions. Note that, for each system of ODE's, the correcponding Jacobians are also defined.
+
+    .. literalinclude:: ../../configuration/ode.py
+        :language: python
+        :lines: 54-
