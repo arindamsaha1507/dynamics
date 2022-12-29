@@ -41,7 +41,7 @@ If the ``family`` is ``ode``, then the ``inputs.yml`` file *must* contain the fo
 The ode.py file
 +++++++++++++++
 
-The ``ode.py`` file defines the exact system of ODE's to be simulated. This can be divided file can be divided into three parts.
+The ``ode.py`` file defines the exact system of ODE's to be simulated. The file contains the following functions:
 
 .. literalinclude:: ../../configuration/ode.py
     :language: python
