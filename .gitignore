@@ -1,3 +1,3 @@
 *.csv
 __pycache__/
-dynamics/__pycache__/*.pyc
+dynamics/__pycache__/system.cpython-310.pyc
