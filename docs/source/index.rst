@@ -29,6 +29,7 @@ Table of Contents
    installation
    basic_usage
    configuration
+   usage
 
 .. Indices and tables
 .. ==================
