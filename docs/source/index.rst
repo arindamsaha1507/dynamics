@@ -30,6 +30,7 @@ Table of Contents
    basic_usage
    configuration
    usage
+   new_systems
 
 .. Indices and tables
 .. ==================
