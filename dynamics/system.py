@@ -1,7 +1,6 @@
 import yaml
 import numpy as np
 import pandas as pd
-import plotly.graph_objects as go
 import configuration.ode as ode
 from numpy import linalg as LA
 from scipy.integrate import solve_ivp
